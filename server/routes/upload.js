@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 // default options
-app.use(fileUpload({ useTempFiles: true }));
+app.use(fileUpload({ useTempFiles: true, tempFileDir: '/tmp' }));
 
 
 app.put('/upload/:tipo/:id', (req, res) => {
