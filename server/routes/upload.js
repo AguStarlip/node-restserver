@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 // default options
-app.use(fileUpload({ useTempFiles: true, tempFileDir: '/tmp' }));
+app.use(fileUpload({ useTempFiles: true }));
 
 
 app.put('/upload/:tipo/:id', (req, res) => {
@@ -68,7 +68,7 @@ app.put('/upload/:tipo/:id', (req, res) => {
 
         // Aqui, carga imagen
 
-        if (tipo === 'usuario') {
+        if (tiposValidos.indexOf(tipo) === 1) {
             imagenUsuario(id, res, nombreArchivo);
         } else {
             imagenProducto(id, res, nombreArchivo);
@@ -147,7 +147,7 @@ function imagenProducto(id, res, nombreArchivo) {
 
         borrarArchivo(productoDB.img, 'productos');
 
-        productoDB.img = nombreArchivo
+        productoDB.img = nombreArchivo;
 
         productoDB.save((err, productoGuardado) => {
 
