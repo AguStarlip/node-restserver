@@ -1,5 +1,5 @@
 node_modules/
-/uploads/product/*
-/uploads/user/*
-!/uploads/product/.gitkeep
-!/uploads/user/.gitkeep
+/uploads/productos/*
+/uploads/usuarios/*
+!/uploads/productos/.gitkeep
+!/uploads/usuarios/.gitkeep
